@@ -30,20 +30,24 @@
         </nav>
     </header>
     <main>
-        <div class="cards-container">
-            <div class="card-item">
-                <div class="card-header">
-                    <img src="https://cimage.se/image/example/kodim13.png?h=150" alt="image">
-                </div>
-                <div class="description">
-                    <h3>Title of the news goes here...</h3>
-                    <h5 class="publisher">ABC Publisher 19/02/24</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, delectus.</p>
-                </div>
-            </div>
+        <div class="cards-container" id="cards-box">
+
         </div>
 
     </main>
+
+    <template id="card-template">
+        <div class="card-item">
+            <div class="card-header">
+                <img id="news-img" src="https://cimage.se/image/example/kodim13.png?h=150" alt="image">
+            </div>
+            <div class="description">
+                <h3 id="title">Title of the news goes here...</h3>
+                <h5 class="publisher">ABC Publisher 19/02/24</h5>
+                <p id="article">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, delectus.</p>
+            </div>
+        </div>
+    </template>
 
     <script type="module" src="app.js"></script>
 </body>
