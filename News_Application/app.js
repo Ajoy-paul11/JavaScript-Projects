@@ -6,6 +6,12 @@ const url = "https://newsapi.org/v2/everything?q="
 
 window.addEventListener('load', () => getnews("assam"))
 
+window.loadPage = () => {
+    window.location.reload()
+    document.getElementById('search-txt').value = '';
+
+}
+
 async function getnews(query) {
     const response = await fetch(`${url}${query}&apiKey=${API_KEY}`)
     const data = await response.json()
@@ -52,14 +58,17 @@ window.changeNews = (id) => {
     currActive = currItem
     currActive.classList.add('active')
     getnews(id)
+    document.getElementById('search-txt').value = '';
+
 }
 
-window.searchNews = () => {
+let searchBtn = document.getElementById('btn')
+let searchTxt = document.getElementById('search-txt')
 
-    let searchQuery = document.getElementById('search-txt').value
-    if (!searchQuery) return
-
-    getnews(searchQuery)
+searchBtn.addEventListener('click', () => {
+    let query = searchTxt.value;
+    if (!query) return
+    getnews(query);
     currActive.classList.remove('active')
-
-}
+    searchTxt.value = '';
+})
