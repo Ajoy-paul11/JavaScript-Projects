@@ -18,14 +18,14 @@
             </div>
             <div>
                 <ul class="nav-items">
-                    <li class="nav-topic">Finance</li>
-                    <li class="nav-topic">Technology</li>
-                    <li class="nav-topic">Football</li>
+                    <li class="nav-topic" id="finance" onclick="changeNews('finance')">Finance</li>
+                    <li class="nav-topic" id="technology" onclick="changeNews('technology')">Technology</li>
+                    <li class="nav-topic" id="football" onclick="changeNews('football')">Football</li>
                 </ul>
             </div>
             <div class="search">
-                <input type="text" placeholder="Search News..." class="input-search" />
-                <button id="btn">Search</button>
+                <input id="search-txt" type="text" placeholder="Search News..." class="input-search" />
+                <button id="btn" onclick="searchNews()">Search</button>
             </div>
         </nav>
     </header>

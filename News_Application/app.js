@@ -4,7 +4,7 @@ const url = "https://newsapi.org/v2/everything?q="
 
 
 
-window.addEventListener('load', () => getnews("India"))
+window.addEventListener('load', () => getnews("assam"))
 
 async function getnews(query) {
     const response = await fetch(`${url}${query}&apiKey=${API_KEY}`)
@@ -41,4 +41,25 @@ function dataFill(newCard, article) {
     const date = new Date(article.publishedAt).toLocaleString("en-US", { timeZone: "Asia/Jakarta" })
 
     cardPublisher.innerText = `${article.source.name} • ${date}`
+
+    newCard.firstElementChild.addEventListener('click', () => window.open(article.url, "_blank"))
+}
+
+let currActive = null
+window.changeNews = (id) => {
+    currActive?.classList.remove('active')
+    let currItem = document.getElementById(id)
+    currActive = currItem
+    currActive.classList.add('active')
+    getnews(id)
+}
+
+window.searchNews = () => {
+
+    let searchQuery = document.getElementById('search-txt').value
+    if (!searchQuery) return
+
+    getnews(searchQuery)
+    currActive.classList.remove('active')
+
 }

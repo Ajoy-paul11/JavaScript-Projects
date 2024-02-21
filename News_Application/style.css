@@ -130,3 +130,7 @@ button:hover {
 .publisher {
   margin-bottom: 10px;
 }
+
+.active {
+  color: rgb(140, 140, 237);
+}
