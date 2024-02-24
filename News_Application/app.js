@@ -4,13 +4,18 @@ const url = "https://newsapi.org/v2/everything?q="
 
 
 
-window.addEventListener('load', () => getnews("assam"))
+window.addEventListener('load', () => {
+    getnews("india")
+    document.getElementById('search-txt').value = '';
+})
+
 
 window.loadPage = () => {
     window.location.reload()
     document.getElementById('search-txt').value = '';
 
 }
+
 
 async function getnews(query) {
     const response = await fetch(`${url}${query}&apiKey=${API_KEY}`)
