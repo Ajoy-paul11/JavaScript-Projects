@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#" onclick="loadPage()">
+                    <img src="Web-logo-removebg-preview.png" alt="logo">
+                </a>
+            </div>
+            <div>
+                <ul class="nav-items">
+                    <li class="nav-topic" id="finance" onclick="changeNews('finance')">Finance</li>
+                    <li class="nav-topic" id="technology" onclick="changeNews('technology')">Technology</li>
+                    <li class="nav-topic" id="football" onclick="changeNews('football')">Football</li>
+                </ul>
+            </div>
+            <div class="search">
+                <input id="search-txt" type="text" placeholder="Search News..." class="input-search" />
+                <button id="btn">Search</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="cards-container" id="cards-box">
+
+        </div>
+
+    </main>
+
+    <template id="card-template">
+        <div class="card-item">
+            <div class="card-header">
+                <img id="news-img" src="https://cimage.se/image/example/kodim13.png?h=150" alt="image">
+            </div>
+            <div class="description">
+                <h3 id="title">Title of the news goes here...</h3>
+                <h5 class="publisher">ABC Publisher 19/02/24</h5>
+                <p id="article">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, delectus.</p>
+            </div>
+        </div>
+    </template>
+    <footer>
+        <p>Copyright &copy; &nbsp; 2024 &nbsp; Ajoy Paul</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
